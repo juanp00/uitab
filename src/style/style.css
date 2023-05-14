@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: #000000;
+    color: #fff;
+}
+
+body {
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 10px;
+}
+
+.title {
+    color: #fff;
+}
+
+.footer {
+    color: #fff;
+}
+
+.main-container {
+    background-image: url("../../public/bg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 55%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    max-width: 1200px;
+    height: 30em;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(255, 255, 255, 0.363) 0px 0px 20px;
+    border-radius: 40px;
+    padding: 50px 90px !important;
+}
+
+.wrapper-content-tab {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row !important;
+    justify-content: center;
+}
+
+.content-tab{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #3a3a3a56;
+    padding: 30px 50px;
+    width: 25%;
+}
+.content-tab.active {
+    background-color: #202020;
+    color: #fff !important;
+} 
+.content-tab.active i{
+    color: #A594F9 !important;
+}
+
+.content-tab:hover{
+    background-color: #202020;
+    color: #fff !important;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.content-tab:hover i{
+    color: #A594F9 !important;
+    transition: 0.5s;
+}
+
+.wrapper-current-tab {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tab-current {
+    opacity: 0;
+    margin-top: 2em;
+    border: 1px solid #27272725;
+    border-radius: 10px;
+    padding: 50px;
+    width: 100%;
+    display: none;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out !important;
+}
+.tab-current.active {
+    opacity: 1;
+    display: block;
+    animation: fade-down 2s forwards;
+}
+
+@media (max-width: 480px) {
+    .content-tab{ 
+        width: 100%;
+    }
+    .tab-current {
+        width: 100% !important;
+    }
+    .main-container {
+        height: 50em;
+        padding: 20px !important;
+    }
+    body {
+        flex-direction: row;
+    }
+}
+
+@keyframes fade-down {
+    from {
+      opacity: 0;
+      transform: translateY(-20px); /* define a posição inicial do elemento, 20px acima do local final */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* define a posição final do elemento */
+    }
+  }
